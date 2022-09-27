@@ -30,13 +30,117 @@ Step 7: Save and run the application.
 ```
 /*
 Program to print the text create your own content providers to get contacts details.
-Developed by:
-Registeration Number :
+Developed by: G Venkata Pavan Kumar
+Registeration Number : 212221240013
 */
 ```
+### MainActivity File:
+~~~
+package com.example.anew;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import android.Manifest;
+import android.annotation.SuppressLint;
+import android.content.ContentResolver;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.ContactsContract;
+import android.util.Log;
+import android.view.View;
 
-## OUTPUT
+public class MainActivity extends AppCompatActivity {
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
+
+    }
+    public void btnGetContacts(View v){
+        getPhoneContacts();
+    }
+    private void getPhoneContacts(){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)!= PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_CONTACTS},0);
+        }
+        ContentResolver contentResolver = getContentResolver();
+        Uri uri = ContactsContract.CommonDataKinds.Phone.CONTENT_URI;
+        Cursor cursor = contentResolver.query(uri,null,null,null,null,null);
+        Log.i("CONTACT_PROVIDER","TOTAL # of CONTACTS ::: "+Integer.toString(cursor.getCount()));
+
+        if(cursor.getCount()>0){
+            while(cursor.moveToNext()){
+                @SuppressLint("Range") String ContactName = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                @SuppressLint("Range") String contactNumber = cursor.getString(cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                Log.i("CONTACT_PROVIDER_DEMO","Contact Name ::: "+ ContactName+"ph# ::: "+contactNumber);
+            }
+        }
+
+
+    }
+}
+~~~
+### activity_main.xml :
+~~~
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get Contacts Details"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        android:onClick="btnGetContacts"/>
+
+</RelativeLayout>
+~~~
+
+###AndroidManifest.xml:
+~~~
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.sanath.contentproviderapp">
+    <uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.New"
+        tools:targetApi="31">
+        <activity
+            android:name="com.example.anew.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
+~~~
+## OUTPUT:
+<img width="190" alt="cp5" src="https://user-images.githubusercontent.com/94827772/192607412-028af406-bc80-43e6-a43d-0a15533fc4d6.png">
+<img width="187" alt="cp4" src="https://user-images.githubusercontent.com/94827772/192607453-5d9cb70d-6179-4659-b578-912065364d30.png">
+<img width="960" alt="cp3" src="https://user-images.githubusercontent.com/94827772/192607457-fce0b0af-9cc5-4f13-ab1b-5809ae601160.png">
+<img width="960" alt="cp2" src="https://user-images.githubusercontent.com/94827772/192607473-5b14476b-3a1e-47dd-82fe-bb2a2b90f736.png">
+<img width="960" alt="cp1" src="https://user-images.githubusercontent.com/94827772/192607494-670901f6-6e12-4d9a-88c0-9026875bb442.png">
 
 
 
