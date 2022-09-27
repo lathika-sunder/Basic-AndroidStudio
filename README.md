@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
 
         />
 </RelativeLayout>
-
+~~~
 ### Output
 ![java1](https://user-images.githubusercontent.com/94827772/192425369-77fb107d-a4ea-41c5-a473-842cf5765216.jpg)
 ![java2](https://user-images.githubusercontent.com/94827772/192425377-dd2c78bf-f5cb-47f0-bcf4-3f24b49d8d62.jpg)
@@ -96,4 +96,4 @@ public class MainActivity extends AppCompatActivity {
 
 ### Result:
 Therefore a program is return to develop a program to detect the various life cycles of an activity. The program is successfully executed.
-~~~
+
