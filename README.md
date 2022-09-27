@@ -1,6 +1,6 @@
 # Basic-AndroidStudio
 ~~~
-Developed: G venkata Pavan Kumar</br>
+Developed: G venkata Pavan Kumar
 Registered Number: 212221240013
 ~~~
 ## MainActivity.java
@@ -83,4 +83,17 @@ public class MainActivity extends AppCompatActivity {
 
         />
 </RelativeLayout>
+
+### Output
+![java1](https://user-images.githubusercontent.com/94827772/192425369-77fb107d-a4ea-41c5-a473-842cf5765216.jpg)
+![java2](https://user-images.githubusercontent.com/94827772/192425377-dd2c78bf-f5cb-47f0-bcf4-3f24b49d8d62.jpg)
+![java3](https://user-images.githubusercontent.com/94827772/192425381-e81f0b46-185f-4e08-b27e-7b051140d3f6.jpg)
+![java4](https://user-images.githubusercontent.com/94827772/192425384-79c945f5-bc16-4ec2-acb5-0538e7432169.jpg)
+![java5](https://user-images.githubusercontent.com/94827772/192425387-e2185a78-e184-4e36-9f59-0860d76d556d.jpg)
+![java6](https://user-images.githubusercontent.com/94827772/192425389-364071b5-1c59-44d4-82cc-5746a6ee01b0.jpg)
+![java7](https://user-images.githubusercontent.com/94827772/192425390-7d34f9ee-24ff-4d34-b85b-831bbae4be83.jpg)
+
+
+### Result:
+Therefore a program is return to develop a program to detect the various life cycles of an activity. The program is successfully executed.
 ~~~
