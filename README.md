@@ -5,7 +5,7 @@ Registered Number: 212221240013
 ~~~
 ## MainActivity.java
 ~~~
-package com.sanath.lifecycle;
+package com.example.lifecycle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
