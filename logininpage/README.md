@@ -29,12 +29,170 @@ Step 7: Save and run the application.
 ```
 /*
 Program to display login page.
-Developed by:
-Registeration Number :
+Developed by: G Venkata Pavn Kuumar.
+Registeration Number : 212221240013
 */
 ```
 
-## OUTPUT
+## MainActivity.java:
+```
+package com.example.student;
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+public class MainActivity extends AppCompatActivity {
+    EditText editName, editPassword;
+    TextView result;
+    Button buttonSubmit, buttonReset;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        editName = (EditText) findViewById(R.id.e1);
+        editPassword = (EditText) findViewById(R.id.e2);
+        result = (TextView) findViewById(R.id.textView);
+        buttonSubmit = (Button) findViewById(R.id.button3);
+        buttonReset = (Button) findViewById(R.id.button4);
+
+        buttonSubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String name = editName.getText().toString();
+                String password = editPassword.getText().toString();
+                result.setText("Name:\t" + name + "\nPassword:\t" + password );
+            }
+        });
+
+        buttonReset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editName.setText("");
+                editPassword.setText("");
+                result.setText("");
+                editName.requestFocus();
+            }
+        });
+    }
+}
+
+```
+## activity_main.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="205dp"
+        android:layout_height="68dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.772"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.543"
+        app:layout_constraintStart_toEndOf="@+id/button3" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="114dp"
+        android:layout_height="48dp"
+        android:text="Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.193" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.342"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <EditText
+        android:id="@+id/e1"
+        android:layout_width="192dp"
+        android:layout_height="48dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.835"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.196"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/e2"
+        android:layout_width="193dp"
+        android:layout_height="49dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.84"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/e1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.341"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+```
+## OUTPUT:
+<img width="960" alt="Exp5 1" src="https://user-images.githubusercontent.com/94827772/200011854-097544e6-4848-464e-ab13-7fb238ffa5bb.png">
+<img width="960" alt="Exp5 2" src="https://user-images.githubusercontent.com/94827772/200011874-f65af163-b7f3-40c5-b112-984b47459d77.png">
+<img width="172" alt="Exp5 3" src="https://user-images.githubusercontent.com/94827772/200011892-c1c27fa9-a230-4ecd-81ed-63cdec6bc41d.png">
+<img width="176" alt="Exp5 41" src="https://user-images.githubusercontent.com/94827772/200011894-4c4fecb5-e3ad-4524-b976-b685fa97b2c3.png">
 
 
 
