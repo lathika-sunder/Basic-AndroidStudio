@@ -35,7 +35,7 @@ Registeration Number :212221240013
 */
 ```
 ### MainActivity.java:
-~~~~
+~~~
 package com.example.ex6;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 }
 ~~~
+
 ### activity_main.xml:
 ~~~~
 <?xml version="1.0" encoding="utf-8"?>
