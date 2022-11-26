@@ -341,4 +341,5 @@ public class MainActivity extends AppCompatActivity {
 <img width="960" alt="9 8" src="https://user-images.githubusercontent.com/94827772/204104036-b9b07d6c-eb4a-47c5-962f-ba7d6beb4981.png">
 
 
-## RESULT
+## RESULT:
+Thus a Simple Android Application to add animations: Move,blink,fade,clockwise,zoom,slide operations using Android Studio is developed and executed successfully.
