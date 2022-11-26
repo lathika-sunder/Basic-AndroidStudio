@@ -30,15 +30,67 @@ Step 7: Save and run the application.
 ```
 /*
 Program to create and design an android application that draws basic graphical primitives on the screen.
-Developed by:
-Registeration Number :
+Developed by: G Venkata Pavan Kumar
+Registeration Number : 212221240013
 */
 ```
+### MainActivity.java:
+```
+package com.example.graphics;
+import androidx.appcompat.app.AppCompatActivity;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.os.Bundle;
+import android.widget.ImageView;
 
-## OUTPUT
+public class MainActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        Bitmap bg = Bitmap.createBitmap(720, 1280,
+                Bitmap.Config.ARGB_8888);
+        ImageView i = (ImageView) findViewById(R.id.ImageView);
+        i.setBackgroundDrawable(new BitmapDrawable(bg));
+        Canvas canvas = new Canvas(bg);
+        Paint paint = new Paint();
+        Paint paint1 = new Paint();
+        paint1.setColor(Color.BLUE);
+        paint.setColor(Color.RED);
+        paint1.setTextSize(50);
+        canvas.drawText("Rectangle", 420, 150, paint1);
+        canvas.drawRect(450, 200, 650, 700, paint);
+        canvas.drawText("Circle", 120, 150, paint1);
+        canvas.drawCircle(200, 350, 150, paint);
+        canvas.drawText("Square", 120, 800, paint1);
+        canvas.drawRect(100, 850, 300, 1050, paint);
+        canvas.drawText("Line", 480, 800, paint1);
+        canvas.drawLine(520, 850, 520, 1150, paint);
 
+    }
+}
+```
+### activity_main.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/ImageView"/>
+</RelativeLayout>
+```
 
+## OUTPUT:
+<img width="960" alt="10 1" src="https://user-images.githubusercontent.com/94827772/204104812-6e3ecde0-9d68-4955-b6ee-1adcbca0925c.png">
+<img width="960" alt="10 2" src="https://user-images.githubusercontent.com/94827772/204104810-f5a50b03-d030-4a95-bbc9-c2a75946bc77.png">
+<img width="188" alt="10 3" src="https://user-images.githubusercontent.com/94827772/204104808-6102f7a8-dc62-4713-967c-48aef09c4896.png">
 
 ## RESULT
 Thus a Simple Android Application to create and design an android application that draws basic graphical primitives on the screen using Android Studio is developed and executed successfully.
