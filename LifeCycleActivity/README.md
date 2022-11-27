@@ -123,13 +123,5 @@ public class MainActivity extends AppCompatActivity {
 
 
 ### Result:
-Therefore a program is return to develop a program to detect the various life cycles of an activity. The program is successfully executed.
+Therefore a program is return to develop a program to detect the various life cycles of an activity. The program is successfully executed. 
 
-
-## OUTPUT
-
-
-
-
-## RESULT
-Thus a Simple Android Application create a HelloWorld Activity using all lifecycles methods to display messages using Android Studio is developed and executed successfully.
