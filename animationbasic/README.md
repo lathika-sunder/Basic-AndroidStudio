@@ -32,8 +32,8 @@ Step 8: Save and run the application.
 ```
 /*
 Program to display animation operation”.
-Developed by: G Venkata Pavan Kumar
-Registeration Number : 212221240013
+Developed by: Lathika Sunder
+Registeration Number : 212221230054
 */
 ```
 ### MainActivity.java:
