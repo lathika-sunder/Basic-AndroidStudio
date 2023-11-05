@@ -31,8 +31,8 @@ Step 8: Save and run the application.
 ```
 /*
 Program to create and design an android application to draw a shapes using 3D graphics with openGL ES.
-Developed by: G Venkata Pavan Kumar
-Registeration Number : 212221240013
+Developed by: Lathika Sunder
+Registeration Number : 212221230054
 */
 ```
 ### MyGLActivity.java:
