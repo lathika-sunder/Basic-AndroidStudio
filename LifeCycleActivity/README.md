@@ -28,8 +28,8 @@ Step 7: Save and run the application.
 
 ## PROGRAM:
 ~~~
-Developed: G venkata Pavan Kumar
-Registered Number: 212221240013
+Developed: Lathika Sunder
+Registered Number: 212221230054
 ~~~
 ## MainActivity.java
 ~~~
