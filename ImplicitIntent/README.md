@@ -30,11 +30,9 @@ Step 7: Save and run the application.
 
 ## PROGRAM:
 ```
-/*
-
 Developed by: Lathika Sunder
 Registeration Number : 212221230054
-*/
+
 ```
 ~~~
 activity_main.xml
